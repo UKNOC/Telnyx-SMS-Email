@@ -1,15 +1,14 @@
-# SMS to Email Forwarder
+# Telnyx SMS to Email Forwarder
 
-A simple yet powerful Flask application that forwards SMS messages to your email inbox. Originally developed for radio stations to receive SMS messages from listeners, this application has been made available to the wider community for various use cases.
+A Flask application that forwards SMS messages from Telnyx to your email inbox. Originally developed for radio stations to receive SMS messages from listeners, this application has been made available to the wider community.
 
 ## Features
 
-- **SMS to Email Forwarding**: Automatically converts incoming SMS messages into beautifully formatted HTML emails
-- **UK Phone Number Formatting**: Intelligently formats UK phone numbers (e.g., converts +447xxx xxx xxx to 07xxx xxx xxx)
-- **Modern Email Template**: Clean, responsive HTML email design that looks great on all devices
-- **Health Monitoring**: Built-in health check endpoint for monitoring application status
-- **Secure**: Supports TLS for SMTP connections
-- **Easy Setup**: Simple configuration using environment variables
+- Forward SMS messages to email with a clean HTML template
+- Format UK phone numbers (converts +447xxx xxx xxx to 07xxx xxx xxx)
+- Health check endpoint for monitoring
+- TLS support for secure SMTP connections
+- Simple configuration using environment variables
 
 ## Quick Start
 
@@ -50,12 +49,12 @@ A simple yet powerful Flask application that forwards SMS messages to your email
 
 ## Webhook Configuration
 
-Configure your SMS provider to send webhooks to:
+Configure your Telnyx number to send webhooks to:
 ```
 http://YOUR_SERVER_IP:5000/webhook
 ```
 
-The application expects webhooks in the following format:
+The application expects webhooks in this format:
 ```json
 {
   "data": {
@@ -76,12 +75,12 @@ The application expects webhooks in the following format:
 
 ## Health Check
 
-Monitor your application's health by making a GET request to:
+Monitor the application's health:
 ```
 http://YOUR_SERVER_IP:5000/health
 ```
 
-A successful response will return:
+Response:
 ```json
 {
   "status": "healthy"
@@ -90,7 +89,7 @@ A successful response will return:
 
 ## Production Deployment
 
-For production deployment:
+For production:
 
 1. Use HTTPS for your webhook endpoint
 2. Run behind a reverse proxy (e.g., Nginx)
@@ -100,16 +99,16 @@ For production deployment:
 
 ## Background
 
-This application was originally developed for radio stations to receive SMS messages from listeners. The stations needed a simple way to receive and archive text messages without relying on physical phones or complex systems. We've now made it available to the wider community as it can be useful for many other scenarios:
+This application was developed for radio stations needing a simple way to receive SMS messages from listeners without physical phones. It's now available for other use cases like:
 
-- Customer service message monitoring
+- Customer service monitoring
 - SMS alerts and notifications
-- Personal SMS archiving
+- Personal message archiving
 - Business SMS management
 
 ## Contributing
 
-Contributions are welcome! Please feel free to submit a Pull Request.
+Contributions are welcome. Please submit a Pull Request.
 
 ## License
 
